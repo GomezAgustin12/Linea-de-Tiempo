@@ -42,12 +42,12 @@ body{
 }
 #Gear{
     margin-left: 9rem;
-    transition: all 1s ease-in-out;
+    transition: all 1.5s ease-in-out;
 }
 #barra{
     position: absolute;
     overflow: hidden;
-    transition: all 1s ease-in-out;
+    transition: all 1.5s ease-in-out;
     z-index: 1;
 }
 
@@ -55,7 +55,7 @@ ul{
     background-image: url('./Imagenes/BARRA.png');
     padding: 10px;
     padding-left: 50rem;
-    width: 3000px;
+    width: 4000px;
 }
 li{ 
     font-size: 40px;

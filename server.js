@@ -5,8 +5,6 @@ app.use(express.static(__dirname + '/'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
-
-
 app.get('/', (req,res) => {
   res.render(__dirname + '/view.html')
 })
