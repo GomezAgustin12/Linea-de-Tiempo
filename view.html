@@ -6,18 +6,23 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-
-    <script type="text/javascript" src="script.js"></script>
-
 </head>
 <body>
     <script src="movimiento.js"></script>
-    <script src=""></script>
+    <script src="ajax.js"></script>
+
+    <script>
+        function llamada(a){
+            rotar(a);
+            traerAños();
+        }
+
+    </script>
     
     <div id="contenedor">    
         <nav id="barra">
             <ul id="años">
-                <li onclick="rotar(1)">1765</li>
+                <li onclick="llamada(1)">1765</li>
                 <li onclick="rotar(2)">1766</li>
                 <li onclick="rotar(3)">1780</li>
                 <li onclick="rotar(4)">1801</li>
@@ -49,8 +54,8 @@
         </nav>
     
         <img src="./Imagenes/Background.jpg" alt="Background" id="Background">
-        <div id="contenedor-imagen">
 
+        <div id="contenedor-imagen">
             <img src="./Engranaje.png" alt="Engranaje" id="Engranaje" height="400rem" width="400rem">
             <img src="./Gear.png" alt="Gear" id="Gear" height="200rem" width="200rem">
         <div>
