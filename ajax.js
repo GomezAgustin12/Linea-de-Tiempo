@@ -1,31 +1,48 @@
-console.log('Correcto')
-
-
-
+console.log('Correcto');
+traerAños();
+rotar(1);
 
 function traerAños(){
-    console.log('Dentro de la funcion')
 
     const xhttp = new XMLHttpRequest();
-
     xhttp.open('GET', 'datos.json', true);
     xhttp.send();
 
     xhttp.onreadystatechange = function(){
 
         if (this.readyState == 4 && this.status == 200){
-           // console.log(this.responseText)
-            let datos=JSON.parse(this.responseText);
-           // console.log(datos);
-            let años = document.querySelector('#años');
-            barra.innerHTML='';
 
+            let datos=JSON.parse(this.responseText);
+            let años = document.querySelector('#años');
+            años.innerHTML='';
+            i=1;
             for(let item of datos){
-                i=1;
-                console.log(item.Año);
-                barra.innerHTML += "<li class='lista' onclick='rotar()'>"+item.Año+"</li>";
+                años.innerHTML += "<li class='lista' onclick='rotar("+i+")'>"+item.Año+"</li>";
                 i++;
             }
         }
     }
+}
+
+function rotar(a){
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.open('GET', 'datos.json', true);
+    xhttp.send();
+    
+    xhttp.onreadystatechange = function(){
+
+        if (this.readyState == 4 && this.status == 200){
+
+            let datos=JSON.parse(this.responseText);
+            let parrafo = document.querySelector(".parrafo");
+            parrafo.innerHTML='';   
+            parrafo.innerHTML="<p>"+datos[a].Descripcion+"</p>"
+        }
+    }
+
+    document.getElementById('Engranaje').style='transform: rotate(-'+ a*20 +'deg);';
+    document.getElementById('barra').style=' transform: translateX(-'+ a*5.5 +'rem)'
+    document.getElementById('Gear').style='transform: rotate('+a*30+'deg);';
+    document.getElementById('Background').style='transform: translateY(-'+(a-1)*50+'rem);'
 }
