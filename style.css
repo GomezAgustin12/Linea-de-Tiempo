@@ -58,10 +58,10 @@ body{
 }
 
 .lista{ 
-    background-color: white;
+    background-image: url('./Imagenes/Fondo de la barra.PNG');
     -webkit-filter: drop-shadow(5px 5px 5px #222 );
     filter: drop-shadow(5px 5px 5px #222);
-    border: 0.1rem solid darkgray;
+    border: 0.1rem solid black;
 
     font-size: 40px;
     margin-right: 1rem;
